@@ -33,7 +33,7 @@ def get_pets_by_breed(petshop, breed):
 def find_pet_by_name(pet_shop, name):
     for pet in pet_shop["pets"]:
         if pet["name"] == name:
-            return name
+            return pet
 
 def remove_pet_by_name(pet_shop, name):
     for pet in pet_shop["pets"]:
@@ -41,13 +41,7 @@ def remove_pet_by_name(pet_shop, name):
           pet_shop["pets"].remove(pet)
     return pet_shop
 
-
-
-   
-
-
-
-def find_pet_by_name(pet_shop, pet_name):
-    for pet in pet_shop["pets"]:
-        if pet["name"] == pet_name:
-            return pet
+def add_pet_to_stock(pet_shop, new_pet):
+    count = len(pet_shop["pets"])
+    pet_shop["pets"].append(new_pet)
+    return count
